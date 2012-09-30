@@ -1,4 +1,3 @@
-
 # npm-mkrelease
 
 Release tool for Node modules inspired by
@@ -15,12 +14,13 @@ Run `npm-mkrelease` in a Node module directory where the package.json file is.
 It does following:
 
   1. Prompts for new version number
-  2. Pushes package to npm
-  3. Commits new version number to Git
-  4. Tags the commit with the version number
-  5. Pushes everything to Git origin
+  2. Writes it to package.json
+  3. Pushes package to npm
+  4. Commits new version number to Git
+  5. Tags the commit with the version number
+  6. Pushes everything to Git origin
 
 ## Warning!
 
-This tool manipulates your package.json, creates commits, pushes them and
-publishes packages to npmjs.org. Do not use if your not sure what it does!
+This tool is bit opinionated and does things you might not be able to revert. Do
+not use it if you are not sure that it does what you want.
