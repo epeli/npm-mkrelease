@@ -2,7 +2,6 @@
 
 var fs = require("fs");
 var spawn = require('child_process').spawn;
-var packageJSON = require("./package.json");
 var readline = require('readline');
 
 
@@ -37,7 +36,9 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
+var packageJSON = require("./package.json");
 console.log("Current version is", packageJSON.version);
+
 rl.question("New version> ", function(version) {
   packageJSON.version = version;
   fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
