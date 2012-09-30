@@ -1,6 +1,6 @@
 # npm-mkrelease
 
-Release tool for Node modules inspired by
+Node module release tool inspired by
 [jarn.mkrelease](http://pypi.python.org/pypi/jarn.mkrelease).
 
 ## Installation
