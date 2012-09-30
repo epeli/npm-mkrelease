@@ -5,7 +5,10 @@
     "utility"
   ],
   "version": "0.1.0",
-  "author": "Esa-Matti Suuronen <esa-matti@suuronen.org>",
+  "author": {
+    "name": "Esa-Matti Suuronen",
+    "email": "esa-matti@suuronen.org"
+  },
   "repository": {
     "type": "git",
     "url": "http://github.com/epeli/npm-mkrelease.git"
@@ -16,5 +19,11 @@
   "main": "./index",
   "bin": {
     "npm-mkrelease": "./mkrelease.js"
-  }
+  },
+  "_id": "mkrelease@0.1.0",
+  "readme": "ERROR: No README.md file found!",
+  "dist": {
+    "shasum": "f412969dad48a7c9b2d53e4751ebbf0065ae6ef1"
+  },
+  "_from": "."
 }
