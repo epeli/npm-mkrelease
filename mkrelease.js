@@ -36,7 +36,7 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-var packageJSON = require("./package.json");
+var packageJSON = JSON.parse(fs.readFileSync("./package.json").toString());
 console.log("Current version is", packageJSON.version);
 
 rl.question("New version> ", function(version) {
