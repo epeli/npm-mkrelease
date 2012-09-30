@@ -1,5 +1,5 @@
 {
-  "name": "mkrelease",
+  "name": "npm-mkrelease",
   "description": "Tool for version pumbing npm modules. Warning: Executes git commi/tag/push and npm publish",
   "tags": [
     "utility"
