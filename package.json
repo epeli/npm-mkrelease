@@ -4,7 +4,7 @@
   "tags": [
     "utility"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Esa-Matti Suuronen",
     "email": "esa-matti@suuronen.org"
@@ -20,10 +20,10 @@
   "bin": {
     "npm-mkrelease": "./mkrelease.js"
   },
-  "_id": "mkrelease@0.1.0",
+  "_id": "npm-mkrelease@0.1.1",
   "readme": "ERROR: No README.md file found!",
   "dist": {
-    "shasum": "f412969dad48a7c9b2d53e4751ebbf0065ae6ef1"
+    "shasum": "637d0f462a6e45fe5135a5d6511cd3a7811c5ab2"
   },
   "_from": "."
 }
