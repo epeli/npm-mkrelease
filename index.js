@@ -60,7 +60,7 @@ console.log("Version in package.json:", packageJSON.version);
 fetchCurrentNpmRelease(packageJSON.name, function(err, npmVersion) {
   console.log("Current npm release:", npmVersion);
 
-  askSemver(function(version) {
+  askSemver(function(err, version) {
     packageJSON.version = version;
     fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
 
