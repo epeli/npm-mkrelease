@@ -40,12 +40,13 @@ var packageJSON = JSON.parse(fs.readFileSync("./package.json").toString());
 console.log("Current version is", packageJSON.version);
 
 rl.question("New version> ", function(version) {
+  version = version.trim();
   packageJSON.version = version;
   fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
 
   execute(
     [ "npm", "publish" ],
-    [ "git", "commit", "package.json", "-m", "New release " + version ],
+    [ "git", "commit", "package.json", "-m", "Release " + version ],
     [ "git", "tag", "-a", version, "-m", "Release " + version ],
     [ "git", "push", "--tags", "origin"],
     [ "git", "push", "origin", "master"],
