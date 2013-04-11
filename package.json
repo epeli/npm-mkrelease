@@ -1,10 +1,10 @@
 {
   "name": "npm-mkrelease",
-  "description": "Tool for version pumbing npm modules. Warning: Executes git commi/tag/push and npm publish",
+  "description": "Simple node module release tool",
   "tags": [
     "utility"
   ],
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": {
     "name": "Esa-Matti Suuronen",
     "email": "esa-matti@suuronen.org"
