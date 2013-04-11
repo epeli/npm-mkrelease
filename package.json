@@ -19,5 +19,9 @@
   "main": "./index",
   "bin": {
     "npm-mkrelease": "./index.js"
+  },
+  "dependencies": {
+    "request": "~2.16.6",
+    "semver": "~1.1.4"
   }
 }
