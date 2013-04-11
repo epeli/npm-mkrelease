@@ -40,8 +40,7 @@ var packageJSON = JSON.parse(fs.readFileSync("./package.json").toString());
 console.log("Current version is", packageJSON.version);
 
 rl.question("New version> ", function(version) {
-  version = version.trim();
-  packageJSON.version = version;
+  packageJSON.version = version.trim() || packageJSON.version;
   fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
 
   execute(
