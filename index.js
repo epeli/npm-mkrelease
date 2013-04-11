@@ -46,7 +46,7 @@ rl.question("New version> ", function(version) {
   execute(
     [ "npm", "publish" ],
     [ "git", "commit", "package.json", "-m", "New release " + version ],
-    [ "git", "tag", "-a", "v" + version, "-m", "Release " + version ],
+    [ "git", "tag", "-a", version, "-m", "Release " + version ],
     [ "git", "push", "--tags", "origin"],
     [ "git", "push", "origin", "master"],
     function(err){
