@@ -11,6 +11,7 @@ function fetchCurrentNpmRelease(pkg, cb) {
   request("http://registry.npmjs.org/" + pkg, function(err, res, body) {
     if (err) return cb(err);
     var data = JSON.parse(body);
+    if (data.error === "not_found") return cb();
     var versions = Object.keys(data.versions).sort(semver.compare);
     cb(null, versions[versions.length-1]);
   });
@@ -58,7 +59,12 @@ var packageJSON = JSON.parse(fs.readFileSync("./package.json").toString());
 
 console.log("Version in package.json:", packageJSON.version);
 fetchCurrentNpmRelease(packageJSON.name, function(err, npmVersion) {
-  console.log("Current npm release:", npmVersion);
+  if (err) {
+    console.log("Failed to read npm release version");
+  }
+  else {
+    console.log("Current npm release:", npmVersion || "(not released yet)");
+  }
 
   askSemver(function(err, version) {
     packageJSON.version = version;
