@@ -67,7 +67,11 @@ fetchCurrentNpmRelease(packageJSON.name, function(err, npmVersion) {
     console.log("Current npm release:", npmVersion || "(not released yet)");
   }
 
-  askSemver(packageJSON.version, function(err, version) {
+  askSemver(packageJSON.version, function cb(err, version) {
+    if (version && npmVersion && version === npmVersion) {
+      console.log("Version", version, "is already released in npm");
+      return askSemver(packageJSON.version, cb);
+    }
     packageJSON.version = version;
     fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
 
