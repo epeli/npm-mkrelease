@@ -17,8 +17,9 @@ function fetchCurrentNpmRelease(pkg, cb) {
   });
 }
 
-function askSemver(cb) {
+function askSemver(default_, cb) {
   rl.question("New version> ", function(version) {
+    if (!version.trim()) return cb(null, default_);
     if (semver.valid(version)) return cb(null, version);
     askSemver(cb);
   });
@@ -66,10 +67,11 @@ fetchCurrentNpmRelease(packageJSON.name, function(err, npmVersion) {
     console.log("Current npm release:", npmVersion || "(not released yet)");
   }
 
-  askSemver(function(err, version) {
+  askSemver(packageJSON.version, function(err, version) {
     packageJSON.version = version;
     fs.writeFileSync("./package.json", JSON.stringify(packageJSON, null, "  "));
 
+    console.log("Releasing and tagging version", version);
     execute(
       [ "npm", "publish" ],
       [ "git", "commit", "package.json", "-m", "Release " + version ],
