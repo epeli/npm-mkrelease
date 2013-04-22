@@ -21,7 +21,7 @@ function askSemver(default_, cb) {
   rl.question("New version> ", function(version) {
     if (!version.trim()) return cb(null, default_);
     if (semver.valid(version)) return cb(null, version);
-    askSemver(cb);
+    askSemver(default_, cb);
   });
 }
 
