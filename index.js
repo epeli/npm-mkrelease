@@ -10,6 +10,7 @@ var semver = require("semver");
 function fetchCurrentNpmRelease(pkg, cb) {
   request("http://registry.npmjs.org/" + pkg, function(err, res, body) {
     if (err) return cb(err);
+    if (res.statusCode === 404) return cb();
     var data = JSON.parse(body);
     if (data.error === "not_found") return cb();
     var versions = Object.keys(data.versions).sort(semver.compare);
