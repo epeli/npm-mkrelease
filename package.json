@@ -21,7 +21,7 @@
     "npm-mkrelease": "./index.js"
   },
   "dependencies": {
-    "request": "~2.16.6",
-    "semver": "~1.1.4"
+    "request": "~2.88.0",
+    "semver": "~5.5.1"
   }
 }
