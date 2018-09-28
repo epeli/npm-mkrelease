@@ -1,5 +1,7 @@
 # npm-mkrelease
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/epeli/npm-mkrelease.svg)](https://greenkeeper.io/)
+
 Node module release tool inspired by
 [jarn.mkrelease](http://pypi.python.org/pypi/jarn.mkrelease).
 
